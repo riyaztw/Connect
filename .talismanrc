@@ -15,3 +15,24 @@ fileignoreconfig:
   checksum: 74ccb6545b17ad501ee53358a0baab7ec99b43a40a321fb77e58569885a1a0ea
   ignore_detectors: []
 scopeconfig: []
+
+fileignoreconfig:
+- filename: android/app/debug.keystore
+  checksum: 4c3c629c301614880b78bb150e5e30f623714632b9a2b49478dc9428dd29f5b7
+  ignore_detectors: []
+- filename: ios/Connect.xcodeproj/project.pbxproj
+  checksum: bd66219d57fd89f45d6476654c3d071b7e468fe80490793d5f1dd6d09b0d09f6
+  ignore_detectors: []
+- filename: ios/Connect.xcodeproj/xcshareddata/xcschemes/Connect-tvOS.xcscheme
+  checksum: 580eb6f3e74e07b72793d04b2b0df709746c3a3903662a59ab62ce1cb7ec511e
+  ignore_detectors: []
+- filename: ios/Connect.xcodeproj/xcshareddata/xcschemes/Connect.xcscheme
+  checksum: d6261ea473c869eb8e0b6431dbd386b1df78233ac33304c50ebc326ace443a42
+  ignore_detectors: []
+- filename: ios/Podfile.lock
+  checksum: 92dbf857a9b3fb88059f5d8f433dae478d68d06dd7149463ca7e1ab476e99fb2
+  ignore_detectors: []
+- filename: yarn.lock
+  checksum: 74ccb6545b17ad501ee53358a0baab7ec99b43a40a321fb77e58569885a1a0ea
+  ignore_detectors: []
+scopeconfig: []
