@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
-import { Text, View, Button, ToastAndroid, Platform } from 'react-native'
-import { check, PERMISSIONS, RESULTS, request } from 'react-native-permissions';
+import React, { Component } from 'react';
+import { Button, Platform, Text, View } from 'react-native';
+import { PERMISSIONS, request, RESULTS } from 'react-native-permissions';
 import Permissions from './Permissions';
+import { greenSnack, redSnack } from './Services/SnackService';
 
 export class ContactsPermission extends Component {
 
+    private readonly iOS = "ios";
+
     getReadContactsPermission = () => {
-        request(Platform.OS === "ios" ? PERMISSIONS.IOS.CONTACTS : PERMISSIONS.ANDROID.READ_CONTACTS)
+        request(Platform.OS === this.iOS ? PERMISSIONS.IOS.CONTACTS : PERMISSIONS.ANDROID.READ_CONTACTS)
             .then(getPermissionsStatus)
             .catch(somethingWentWrong)
     }
@@ -35,23 +38,23 @@ export class ContactsPermission extends Component {
 export default ContactsPermission
 
 const somethingWentWrong = () => {
-    ToastAndroid.show("Something went wrong", ToastAndroid.BOTTOM);
+    redSnack("Something went wrong")
 };
 
 
 const getPermissionsStatus = (result: "unavailable" | "denied" | "blocked" | "granted") => {
     switch (result) {
         case RESULTS.UNAVAILABLE:
-            ToastAndroid.show('This feature is not available (on this device / in this context)', ToastAndroid.BOTTOM);
+            redSnack("This feature is not available (on this device / in this context)");
             break;
         case RESULTS.DENIED:
-            ToastAndroid.show("The permission has not been requested / is denied but requestable", ToastAndroid.BOTTOM);
+            redSnack("The permission has not been requested / is denied but requestable");
             break;
         case RESULTS.GRANTED:
-            ToastAndroid.show("The permission is granted", ToastAndroid.BOTTOM);
+            greenSnack("The permission is granted");
             break;
         case RESULTS.BLOCKED:
-            ToastAndroid.show("The permission is denied and not requestable anymore", ToastAndroid.BOTTOM);
+            redSnack("The permission is denied and not requestable anymore");
             break;
     }
 };

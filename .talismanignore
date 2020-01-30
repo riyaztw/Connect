@@ -1,8 +1,5 @@
 package-lock.json
-ios/
-android/
 ios/Podfile.lock
+yarn.lock
 scopeconfig:
-  - scope: ios
   - scope: node
-  - scope: android

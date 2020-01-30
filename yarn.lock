@@ -5487,6 +5487,11 @@ react-native-permissions@^2.0.9:
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-2.0.9.tgz#5eabdaa952dd099d14e3790af691f49ff2de0895"
   integrity sha512-64F95x4Y1RqsQiPco+Qs+OAm3rKUTRfWDMpp1f0If9YfRXOxxVFJqf7mSlVvlSY4pZAhZgLVydOmA7aTTduPUw==
 
+react-native-snackbar@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-2.2.0.tgz#8b4daf9e16523d61f0152d816ba39982fcbf1198"
+  integrity sha512-j2qVtuXuk3FGNxUjnBqHiQLnz2lYVwCyrsvxpCCxif7ddMqY0sfbACXUwRLTEB5d3aliSN/6EZInGCJ93e4cMQ==
+
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"
