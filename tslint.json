@@ -3,14 +3,10 @@
     "extends": [
         "tslint:recommended"
     ],
-    "linterOptions": {
-        "exclude": ["./src/resources/data/BankNumbers.ts"]
-    },
-    "jsRules": {
-        
-    },
+    "jsRules": {},
     "rules": {
         "semicolon": false,
+        "no-console": false,
         "object-literal-sort-keys": false,
         "arrow-parens": false,
         "interface-over-type-literal": false,

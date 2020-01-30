@@ -36,3 +36,15 @@ fileignoreconfig:
   checksum: 74ccb6545b17ad501ee53358a0baab7ec99b43a40a321fb77e58569885a1a0ea
   ignore_detectors: []
 scopeconfig: []
+
+fileignoreconfig:
+- filename: ios/Podfile.lock
+  checksum: 6e2fbf398a2726123b598cf9b4f05d428d5fee7e319fb6630d2cc7dfba9ea9b6
+  ignore_detectors: []
+- filename: yarn.lock
+  checksum: d4aba46bf881408c9773e75651a016acbe293100d7a03c58851f9d87b7ed1715
+  ignore_detectors: []
+- filename: package-lock.json
+  checksum: cd3e88046390e2a0c5369b40fc974fa38bc2fd70af9e05e4634d12cedb449893
+  ignore_detectors: []
+scopeconfig: []

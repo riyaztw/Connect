@@ -1,38 +1,57 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { check, PERMISSIONS, RESULTS } from 'react-native-permissions'
-const Permissions = () => {
+import React, { Component } from 'react';
+import { Button, PermissionsAndroid, View, ToastAndroid } from 'react-native';
 
-    const getPermission = () => {
-        check(PERMISSIONS.IOS.LOCATION_ALWAYS)
-            .then(result => {
-                switch (result) {
-                    case RESULTS.UNAVAILABLE:
-                        console.log(
-                            'This feature is not available (on this device / in this context)',
-                        );
-                        break;
-                    case RESULTS.DENIED:
-                        console.log(
-                            'The permission has not been requested / is denied but requestable',
-                        );
-                        break;
-                    case RESULTS.GRANTED:
-                        console.log('The permission is granted');
-                        break;
-                    case RESULTS.BLOCKED:
-                        console.log('The permission is denied and not requestable anymore');
-                        break;
-                }
-            })
-            .catch(err => { /* */ })
+export class Permissions extends Component {
+    state: {
+        isPermissionsGiven: boolean
     }
-    return (
-        <View>
-            <Text>Getting Permissions</Text>
-            {getPermission()}
-        </View>
-    )
+    constructor(props: Readonly<{}>) {
+        super(props)
+        this.state = {
+            isPermissionsGiven: false
+        }
+    }
+
+    private requestCameraPermission = async () => {
+        try {
+            if (this.state.isPermissionsGiven) {
+                ToastAndroid.show("You can use the camera, Permission given already", ToastAndroid.BOTTOM)
+                return;
+            }
+            const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.CAMERA,
+                {
+                    title: 'Connect Photo App Camera Permission',
+                    message: 'Connect Photo App needs access to your camera ' +
+                        'so you can take awesome pictures.',
+                    buttonNeutral: 'Ask me later',
+                    buttonNegative: 'Cancel',
+                    buttonPositive: 'OK',
+                },
+            );
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                this.setState({ isPermissionsGiven: true })
+                ToastAndroid.show("You can use the camera", ToastAndroid.BOTTOM)
+                console.log("You can use the camera");
+            } else {
+                ToastAndroid.show("Camera permission denied", ToastAndroid.BOTTOM)
+                console.log("Camera permission denied")
+            }
+        } catch (error) {
+            console.log("Error")
+        }
+    }
+
+    render() {
+        return (
+            <View>
+                <Button
+                    title="Give Camera Permissions"
+                    onPress={this.requestCameraPermission}
+                />
+            </View>
+        )
+    }
 }
 
 export default Permissions
