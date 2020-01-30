@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, PermissionsAndroid, View, ToastAndroid } from 'react-native';
+import { Button, PermissionsAndroid, View, ToastAndroid, Text } from 'react-native';
 
 export class Permissions extends Component {
     state: {
@@ -45,6 +45,7 @@ export class Permissions extends Component {
     render() {
         return (
             <View>
+                <Text>Give Camera Permissions</Text>
                 <Button
                     title="Give Camera Permissions"
                     onPress={this.requestCameraPermission}

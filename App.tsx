@@ -5,7 +5,6 @@ import HomeScreen from './src/HomeScreen';
 const App = () => {
   return (
     <SafeAreaView>
-      <Text>Welcome to connect</Text>
       <HomeScreen />
     </SafeAreaView>
   )
