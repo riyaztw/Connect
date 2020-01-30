@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Text, View, Button, ToastAndroid } from 'react-native'
+import { Text, View, Button, ToastAndroid, Platform } from 'react-native'
 import { check, PERMISSIONS, RESULTS, request } from 'react-native-permissions';
 import Permissions from './Permissions';
 
 export class ContactsPermission extends Component {
 
     getReadContactsPermission = () => {
-        request(PERMISSIONS.ANDROID.READ_CONTACTS)
+        request(Platform.OS === "ios" ? PERMISSIONS.IOS.CONTACTS : PERMISSIONS.ANDROID.READ_CONTACTS)
             .then(getPermissionsStatus)
             .catch(somethingWentWrong)
     }
 
     getCameraPermission = () => {
-        request(PERMISSIONS.ANDROID.CAMERA)
+        request(Platform.OS === "ios" ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA)
             .then(getPermissionsStatus)
             .catch(somethingWentWrong)
     }

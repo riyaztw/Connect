@@ -1,0 +1,8 @@
+package-lock.json
+ios/
+android/
+ios/Podfile.lock
+scopeconfig:
+  - scope: ios
+  - scope: node
+  - scope: android

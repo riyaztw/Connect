@@ -36,6 +36,11 @@ target 'Connect' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts.podspec"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
+
+
   target 'ConnectTests' do
     inherit! :search_paths
     # Pods for testing
