@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { yellowSnack } from '../../Services/SnackService'
 
 const ContactCard = ({ contact }) => {
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={()=>{yellowSnack("clicked")}}>
             <Text>{contact.givenName}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 
