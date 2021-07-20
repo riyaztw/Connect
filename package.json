@@ -16,7 +16,7 @@
     "@types/react-native": "^0.61.4",
     "@types/react-test-renderer": "^16.9.2",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-contacts": "^5.0.7",
     "react-native-exception-handler": "^2.10.8",
     "react-native-gesture-handler": "^1.5.6",
